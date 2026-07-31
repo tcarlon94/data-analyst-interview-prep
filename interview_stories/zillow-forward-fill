@@ -1,0 +1,27 @@
+# Zillow Home Price Prediction
+
+## Situation
+
+Built a machine learning model to predict home prices.
+
+## Challenge
+
+Forward-filled missing data created unrealistic housing prices.
+
+## Action
+
+Investigated the anomaly.
+
+Found one town's values had been forward-filled for several years.
+
+Limited forward filling to six months.
+
+Added a minimum transaction threshold.
+
+## Result
+
+Model accuracy improved to approximately 83%.
+
+## Lessons Learned
+
+Data preparation often has a greater impact than model selection.

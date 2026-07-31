@@ -1,0 +1,43 @@
+# MLB Analytics Dashboard
+
+## Situation
+
+Designed an end-to-end analytics platform using MLB data.
+
+## Architecture
+
+Python
+
+↓
+
+API
+
+↓
+
+Snowflake
+
+↓
+
+SQL
+
+↓
+
+Tableau
+
+## Challenge
+
+Incorrect aggregations caused inflated statistics.
+
+## Action
+
+Redesigned the data model using a star schema.
+
+Corrected table grain and relationships.
+
+## Result
+
+Built a scalable dashboard highlighting daily player and team performance.
+
+## Lessons Learned
+
+Proper data modeling is essential for trustworthy analytics.

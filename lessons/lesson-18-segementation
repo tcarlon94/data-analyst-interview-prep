@@ -1,0 +1,32 @@
+# Lesson 18 – Segmentation
+
+## Key Concepts
+- KPI vs Driver Metric vs Segment
+- Why averages can hide root causes
+- Business-first investigation framework
+
+## Common Segments
+- Customer size
+- Geography
+- Product
+- Customer tenure
+- Acquisition channel
+- Usage
+- Industry
+
+## Interview Takeaway
+
+When aggregate metrics don't explain a business problem, segment the data before forming conclusions.
+
+## Business Framework
+
+1. Clarify the metric.
+2. Validate the data.
+3. Identify the KPI driver.
+4. Segment the affected population.
+5. Form hypotheses.
+6. Recommend actions.
+
+## Biggest Lesson
+
+Segmentation transforms descriptive analytics into actionable insights.

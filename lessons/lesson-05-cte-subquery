@@ -1,0 +1,13 @@
+# Lesson 5 – CTEs vs Subqueries
+
+## Key Concepts
+- Common Table Expressions
+- Nested Subqueries
+- Query Readability
+
+## Interview Takeaways
+- Use CTEs for logical transformations.
+- Use subqueries for simple calculations.
+
+## Biggest Lesson
+Readable SQL is easier to debug and maintain.

@@ -1,0 +1,19 @@
+# Lesson 17 – Senior Analytics Framework
+
+## Key Concepts
+- KPI Trees
+- Segmentation
+- SQL Optimization
+- Executive Decision Making
+
+## Senior Investigation Framework
+
+1. Clarify the business question.
+2. Validate the data.
+3. Identify the KPI driver.
+4. Segment the affected population.
+5. Form hypotheses.
+6. Recommend actions.
+
+## Biggest Lesson
+The best analysts don't start with SQL—they start with the business question.

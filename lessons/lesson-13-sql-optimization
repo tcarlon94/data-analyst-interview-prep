@@ -1,0 +1,15 @@
+# Lesson 13 – SQL Optimization
+
+## Key Concepts
+- Filter Early
+- Join Cardinality
+- Aggregation Strategy
+- SELECT *
+- Query Efficiency
+
+## Interview Takeaways
+- Reduce rows before expensive operations.
+- Aggregate only when business requirements allow.
+
+## Biggest Lesson
+Optimize for the required output, not the SQL syntax.

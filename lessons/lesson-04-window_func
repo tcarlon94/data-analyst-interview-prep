@@ -1,0 +1,14 @@
+# Lesson 4 – Window Functions
+
+## Key Concepts
+- ROW_NUMBER
+- RANK
+- DENSE_RANK
+- PARTITION BY
+
+## Interview Takeaways
+- Window functions preserve row-level detail.
+- GROUP BY collapses data.
+
+## Biggest Lesson
+Choose the ranking function based on business requirements.

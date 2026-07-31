@@ -1,0 +1,51 @@
+# Case Study: Enterprise ARR Declined 15%
+
+## Business Problem
+
+The CFO reports that Enterprise ARR declined by 15% this quarter and asks for an explanation and recommendation.
+
+---
+
+## Investigation Framework
+
+1. Clarify the comparison period (QoQ, YoY, forecast).
+2. Validate the ARR calculation.
+3. Build a KPI tree.
+4. Identify which driver changed.
+5. Segment affected customers.
+6. Form hypotheses.
+7. Recommend actions.
+
+---
+
+## KPI Tree
+
+Enterprise ARR
+
+- Customer Count
+- Average Contract Value
+- Renewal Rate
+- Expansion Revenue
+
+Renewal Rate
+
+- Product Adoption
+- Customer Satisfaction
+- Feature Usage
+- Support Tickets
+
+---
+
+## Recommended Segments
+
+- Company Size
+- Geography
+- Industry
+- Customer Tenure
+- Product Purchased
+
+---
+
+## Executive Recommendation
+
+Identify the KPI responsible for the decline before recommending changes. Prioritize actions based on the highest-impact customer segment.

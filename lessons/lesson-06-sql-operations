@@ -1,0 +1,13 @@
+# Lesson 6 – SQL Order of Operations
+
+## Key Concepts
+- WHERE vs HAVING
+- Logical Query Processing
+- Window Function Execution
+
+## Interview Takeaways
+- WHERE filters rows.
+- HAVING filters aggregated groups.
+
+## Biggest Lesson
+Understanding execution order prevents common SQL mistakes.

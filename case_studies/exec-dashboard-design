@@ -1,0 +1,48 @@
+# Executive Dashboard Framework
+
+## KPIs
+
+- ARR
+- Net Revenue Retention
+- Active Customers
+- Gross Margin
+- Customer Acquisition
+- Cash Burn
+
+---
+
+## Supporting Visuals
+
+- Target vs Actual
+- MoM Change
+- YoY Change
+- Sparklines
+- Geographic Breakdown
+
+---
+
+## Drilldowns
+
+ARR
+
+↓
+
+Renewals
+
+↓
+
+Customer Segments
+
+↓
+
+Individual Accounts
+
+---
+
+## Dashboard Philosophy
+
+Every visualization should answer:
+
+- What happened?
+- Why?
+- What should leadership do next?

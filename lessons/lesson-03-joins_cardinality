@@ -1,0 +1,14 @@
+# Lesson 3 – Joins & Cardinality
+
+## Key Concepts
+- INNER vs LEFT JOIN
+- One-to-One
+- One-to-Many
+- Many-to-Many
+
+## Interview Takeaways
+- Validate join cardinality before aggregating.
+- Many-to-many joins often create duplicate metrics.
+
+## Biggest Lesson
+Most dashboard errors come from grain and joins, not calculations.

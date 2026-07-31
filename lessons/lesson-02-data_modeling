@@ -1,0 +1,15 @@
+# Lesson 2 – Data Modeling & Table Grain
+
+## Key Concepts
+- Fact vs Dimension Tables
+- Table Grain
+- Star Schema
+- SCD Type 1 & Type 2
+
+## Interview Takeaways
+- Define grain before writing SQL.
+- Fact tables contain measurable events.
+- Dimension tables describe entities.
+
+## Biggest Lesson
+Poorly defined grain causes incorrect aggregations.

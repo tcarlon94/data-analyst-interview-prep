@@ -1,0 +1,13 @@
+# Lesson 11 – Rolling Metrics
+
+## Key Concepts
+- Running Totals
+- Rolling Averages
+- Window Frames
+
+## Interview Takeaways
+- Running totals accumulate.
+- Rolling averages smooth volatility.
+
+## Biggest Lesson
+Executives often care more about trends than daily fluctuations.
