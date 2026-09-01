@@ -1,0 +1,32 @@
+# Post-Lesson 18 Practice – Ranking With Ties
+
+## Key Concept
+
+Use the correct ranking window function based on the business requirement.
+
+- `ROW_NUMBER()` forces every row to have a unique position.
+- `RANK()` gives tied values the same rank and leaves gaps after ties.
+- `DENSE_RANK()` gives tied values the same rank without leaving gaps.
+
+## Interview Exercise
+
+Find the highest-revenue merchant in each industry for July. If multiple merchants tie for the highest revenue in an industry, return all of them.
+
+## My Approach
+
+Use `RANK()` because if two merchants tie for the top result, both need to be returned.
+
+The ranking is calculated within each industry using:
+
+```sql
+RANK() OVER (
+    PARTITION BY industry
+    ORDER BY revenue DESC
+)
+```
+
+The July filter is applied before the window function so the ranking is based only on July revenue.
+
+## Interview Takeaway
+
+The choice between `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()` is a business-logic decision, not just a syntax decision. When ties should all qualify for a top-N result, `RANK()` or `DENSE_RANK()` is generally more appropriate than `ROW_NUMBER()`.
