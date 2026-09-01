@@ -1,0 +1,34 @@
+# Lesson 37 — Final Extend SQL Mock and Interview Readiness Review
+
+## Final SQL Checklist
+Before submitting a query:
+- What does one output row represent?
+- Are the join keys correct?
+- Can any join multiply rows?
+- Should filtering happen before or after aggregation?
+- Do I need `GROUP BY` or a window function?
+- How should ties be handled?
+- Are nulls handled intentionally?
+- Does the final result answer the business question exactly?
+
+## High-Value SQL Patterns
+- Aggregation with `GROUP BY`
+- `WHERE` vs. `HAVING`
+- CTEs
+- Inner and left joins
+- Conditional aggregation
+- `ROW_NUMBER()`, `RANK()`, `DENSE_RANK()`
+- `LAG()` / `LEAD()`
+- Top-N per group
+- Date-based analysis
+
+## Interview Communication
+1. Restate the problem.
+2. Define the grain.
+3. Explain the approach.
+4. Write the query in logical steps.
+5. Test edge cases mentally.
+6. Explain how the result would be validated.
+
+## Final Takeaway
+Technical interviews evaluate both SQL fluency and analytical judgment. Slow down enough to establish grain and business logic, then write the simplest query that correctly answers the question.
