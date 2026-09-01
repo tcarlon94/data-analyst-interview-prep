@@ -1,0 +1,22 @@
+# Lesson 24 — Statistical vs. Business Significance
+
+## Key Concepts
+Statistical significance asks whether an observed effect is unlikely to be explained by random variation under the null hypothesis.
+
+Business significance asks whether the size of that effect is meaningful enough to justify action.
+
+## Example
+An experiment can produce a statistically significant 0.1% conversion lift with a very large sample. That does not automatically mean the change is worth launching if implementation cost, risk, or operational complexity outweighs the incremental value.
+
+## Decision Framework
+Evaluate:
+- Effect size
+- Confidence interval
+- Sample size
+- Revenue or cost impact
+- Implementation cost
+- Customer impact
+- Strategic importance
+
+## Interview Takeaway
+Never stop at `p < 0.05`. Translate the result into business impact and make a recommendation based on both statistical evidence and practical value.
