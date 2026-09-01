@@ -1,0 +1,31 @@
+# Lesson 30 — Statistical Test Selection, Probability, and Confidence Intervals
+
+## Test Selection Framework
+Ask four questions:
+1. What type of outcome am I measuring?
+2. How many groups am I comparing?
+3. Are observations independent or paired?
+4. What assumptions does the test require?
+
+## Probability Reminder
+For independent events:
+```text
+P(A and B) = P(A) × P(B)
+```
+
+For conditional probability:
+```text
+P(A | B) = P(A and B) / P(B)
+```
+
+## Confidence Interval Interpretation
+Focus on:
+- Point estimate
+- Width of the interval
+- Whether the interval includes the null value
+- Whether the plausible effect sizes are meaningful to the business
+
+A narrow interval indicates more precision than a wide interval.
+
+## Interview Takeaway
+In mixed statistics questions, narrate the decision process. Identifying the data structure and business question is often more important than immediately naming a formula.
