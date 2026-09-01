@@ -1,0 +1,34 @@
+# Lesson 21 — Window Functions and PARTITION BY
+
+## Key Concepts
+Window functions calculate values across related rows without collapsing the result set like `GROUP BY` does.
+
+Common functions:
+- `ROW_NUMBER()`
+- `RANK()`
+- `DENSE_RANK()`
+- `LAG()` / `LEAD()`
+- `SUM()` / `AVG()` as window functions
+
+## PARTITION BY
+`PARTITION BY` defines the group within which the window calculation resets.
+
+```sql
+SELECT
+    merchant_id,
+    industry,
+    revenue,
+    RANK() OVER (
+        PARTITION BY industry
+        ORDER BY revenue DESC
+    ) AS industry_rank
+FROM merchant_monthly;
+```
+
+## Tie Handling
+- `ROW_NUMBER()` forces unique positions.
+- `RANK()` preserves ties and skips subsequent ranks.
+- `DENSE_RANK()` preserves ties without gaps.
+
+## Interview Takeaway
+Use window functions when you need row-level detail plus a calculation across related rows. Always explain what the partition represents in business terms.
