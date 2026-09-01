@@ -1,0 +1,27 @@
+# Lesson 25 — A/B Testing and Experiment Interpretation
+
+## Core Framework
+1. Define the hypothesis.
+2. Select a primary metric.
+3. Define guardrail metrics.
+4. Randomly assign treatment and control.
+5. Run the experiment for an appropriate duration.
+6. Compare outcomes.
+7. Evaluate uncertainty and effect size.
+8. Make a business recommendation.
+
+## Key Concepts
+- Null and alternative hypotheses
+- Treatment vs. control
+- Randomization
+- Primary metrics
+- Guardrail metrics
+- P-values
+- Confidence intervals
+- Practical significance
+
+## Interpretation
+A statistically significant result does not automatically prove causality if the experiment has design problems. Check randomization, sample balance, instrumentation, exposure, duration, and external events before recommending a launch.
+
+## Interview Takeaway
+Strong experiment answers combine statistical interpretation with product judgment. Explain what happened, how certain you are, what could invalidate the result, and what the business should do next.

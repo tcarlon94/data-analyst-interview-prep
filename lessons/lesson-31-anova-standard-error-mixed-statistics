@@ -1,0 +1,31 @@
+# Lesson 31 — ANOVA, Standard Error, and Mixed Statistics Practice
+
+## ANOVA
+ANOVA tests whether there is evidence that at least one mean differs across three or more groups.
+
+- Null hypothesis: all group means are equal.
+- Alternative hypothesis: at least one group mean differs.
+
+A significant ANOVA result does not identify which specific groups differ; post-hoc comparisons may be needed.
+
+## Standard Error
+Standard error measures the uncertainty of a sample estimate.
+
+For a sample mean:
+```text
+SE = s / sqrt(n)
+```
+
+As sample size increases, standard error generally decreases.
+
+## Mixed Practice Checklist
+Be ready to distinguish:
+- Standard deviation vs. standard error
+- Confidence interval vs. p-value
+- Statistical significance vs. business significance
+- Correlation vs. causation
+- Type I vs. Type II errors
+- t-test vs. ANOVA
+
+## Interview Takeaway
+For statistics interviews, define the concept briefly, explain when it is used, and connect it to the decision the analyst is trying to make.

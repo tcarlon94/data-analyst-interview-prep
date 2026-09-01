@@ -1,0 +1,29 @@
+# Lesson 34 — Naomi Interview Simulation: Experimentation, Probability, and Python
+
+## Simulation Focus
+Practice moving between conceptual statistics, applied experimentation, probability problems, and Python without losing structure.
+
+## Experimentation Response
+When given an experiment:
+1. Clarify the hypothesis and primary metric.
+2. Check randomization and sample balance.
+3. Evaluate effect size and uncertainty.
+4. Review guardrails and possible confounders.
+5. Translate the result into a business recommendation.
+
+## Probability Response
+- Define events.
+- Identify independence or conditioning.
+- Choose the correct probability rule.
+- Calculate carefully.
+- Check whether the answer is plausible.
+
+## Python Response
+- Explain the intended transformation.
+- Write readable Pandas operations.
+- Validate row counts and grain after merges.
+- Handle missing values deliberately.
+- Inspect the output before drawing conclusions.
+
+## Interview Takeaway
+The strongest technical answer is not merely correct. It communicates assumptions, validates the approach, and connects the result to the decision being made.

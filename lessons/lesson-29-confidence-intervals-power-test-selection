@@ -1,0 +1,32 @@
+# Lesson 29 — Confidence Intervals, Statistical Power, and Test Selection
+
+## Confidence Intervals
+A confidence interval provides a range of plausible values for the population parameter under the chosen procedure.
+
+For experiment interpretation, the interval communicates both direction and uncertainty around the estimated effect.
+
+## Statistical Power
+Power is the probability of detecting a true effect.
+
+Power generally increases with:
+- Larger sample size
+- Larger true effect size
+- Lower outcome variability
+- A higher significance threshold
+
+## Test Selection
+Choose the statistical test based on:
+- Outcome type
+- Number of groups
+- Independent vs. paired observations
+- Distribution and assumptions
+
+Common examples:
+- Two independent means → independent t-test
+- Before/after measurements → paired t-test
+- Two proportions → two-proportion test
+- More than two means → ANOVA
+- Categorical association → chi-square test
+
+## Interview Takeaway
+Do not select a test by memorizing names alone. Start with the data type, comparison being made, study design, and assumptions.

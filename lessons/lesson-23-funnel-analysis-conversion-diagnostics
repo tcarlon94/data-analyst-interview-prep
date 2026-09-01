@@ -1,0 +1,26 @@
+# Lesson 23 — Funnel Analysis and Conversion Diagnostics
+
+## Key Concepts
+Funnels measure progression through a sequence of user actions.
+
+Example:
+`Visit → Signup → Verification → Activation → Purchase`
+
+## Diagnostic Framework
+1. Define each funnel step precisely.
+2. Measure users entering each step.
+3. Calculate step-to-step conversion.
+4. Identify the largest or newest drop-off.
+5. Segment the affected users.
+6. Form hypotheses and recommend next actions.
+
+## Useful Segments
+- Device
+- Geography
+- Acquisition channel
+- New vs. returning users
+- Product or plan
+- Customer size
+
+## Interview Takeaway
+Do not jump directly from an overall conversion decline to a recommendation. Locate the failing step first, then segment the change and connect it to plausible product or business drivers.

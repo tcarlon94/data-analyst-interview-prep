@@ -1,0 +1,37 @@
+# Lesson 36 — SQL Grain, Join Duplication, and Conditional Aggregation
+
+## Grain
+Grain describes what one row represents.
+
+Examples:
+- One row per customer
+- One row per order
+- One row per order line
+- One row per merchant per month
+
+Always identify grain before joining or aggregating tables.
+
+## Join Duplication
+A one-to-many join can duplicate values from the one-side table.
+
+Example: joining an order-level table to order lines creates multiple rows per order. Summing an order-level revenue field after that join can overstate revenue.
+
+## Prevention
+- Understand the grain of each table.
+- Check join cardinality.
+- Aggregate the many-side first when appropriate.
+- Validate row counts before and after joins.
+- Avoid `DISTINCT` as a blind fix for duplication.
+
+## Conditional Aggregation
+```sql
+SELECT
+    merchant_id,
+    COUNT(DISTINCT CASE WHEN status = 'approved' THEN order_id END) AS approved_orders,
+    COUNT(DISTINCT CASE WHEN status = 'declined' THEN order_id END) AS declined_orders
+FROM orders
+GROUP BY merchant_id;
+```
+
+## Interview Takeaway
+Many SQL mistakes are grain mistakes disguised as syntax mistakes. State what one row represents at each stage of the query and validate that joins have not changed the intended metric.

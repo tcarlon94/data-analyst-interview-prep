@@ -1,0 +1,35 @@
+# Lesson 32 — Naomi Mixed Mock: Statistics, Probability, and Python
+
+## Interview Focus
+Mixed technical practice combining statistics, probability, experimentation, and Python/Pandas reasoning.
+
+## Statistics Topics
+- Hypothesis testing
+- Confidence intervals
+- Statistical power
+- Type I and Type II errors
+- Test selection
+- Business vs. statistical significance
+
+## Probability Topics
+- Independent events
+- Conditional probability
+- Expected value
+
+## Python/Pandas Topics
+- Filtering
+- `groupby()` aggregations
+- Sorting
+- Missing values
+- Merges
+- Debugging data transformations
+
+## Answer Framework
+1. Clarify the question and assumptions.
+2. State the concept or approach.
+3. Work through the calculation or code logically.
+4. Sanity-check the result.
+5. Interpret it in business terms.
+
+## Interview Takeaway
+Mixed interviews test reasoning under pressure more than memorization. A structured explanation makes it easier to recover even when the exact syntax or formula is not immediately available.

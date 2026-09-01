@@ -1,0 +1,29 @@
+# Lesson 26 — Experiment Design, Sample Size, and Business Decisions
+
+## Experiment Design
+A strong experiment begins before any statistical test is run.
+
+Define:
+- Population and eligibility
+- Randomization unit
+- Primary metric
+- Minimum detectable effect
+- Significance level
+- Desired statistical power
+- Expected baseline rate
+- Required sample size
+- Test duration
+
+## Sample Size
+Larger samples reduce uncertainty and make smaller effects easier to detect. Too little data increases the risk of missing a real effect, while extremely large samples can make trivial effects statistically significant.
+
+## Business Decision Framework
+After the test, consider:
+1. Is the result statistically credible?
+2. Is the effect large enough to matter?
+3. Are guardrails acceptable?
+4. Does the result generalize to the target population?
+5. Is the expected benefit worth the implementation cost or risk?
+
+## Interview Takeaway
+Experimentation is a decision-making process, not a p-value exercise. Good analysts connect design quality, statistical uncertainty, and business value.

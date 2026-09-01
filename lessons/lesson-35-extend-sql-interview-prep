@@ -1,0 +1,44 @@
+# Lesson 35 — Extend SQL Interview Prep: Aggregation, Joins, and Window Functions
+
+## Interview Focus
+Core SQL patterns likely to appear in an analyst technical interview:
+- Aggregation
+- Joins
+- CTEs
+- Window functions
+- Ranking
+- Date filtering
+- Conditional aggregation
+
+## Problem-Solving Framework
+Before writing SQL:
+1. Define the requested output grain.
+2. Identify the tables and join keys.
+3. Determine whether joins can change row counts.
+4. Decide what should be filtered before aggregation.
+5. Choose `GROUP BY` or a window function based on whether rows should collapse.
+6. Validate the result against the business requirement.
+
+## Ranking Example
+```sql
+WITH rev_industry AS (
+    SELECT
+        merchant_id,
+        industry,
+        revenue,
+        RANK() OVER (
+            PARTITION BY industry
+            ORDER BY revenue DESC
+        ) AS industry_rank
+    FROM merchant_monthly
+    WHERE month = 'July'
+)
+SELECT merchant_id, industry, revenue
+FROM rev_industry
+WHERE industry_rank = 1;
+```
+
+`RANK()` preserves multiple merchants tied for first place.
+
+## Interview Takeaway
+Explain the grain and business logic aloud before coding. Correct reasoning makes the SQL easier to write and easier for the interviewer to follow.

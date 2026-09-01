@@ -1,0 +1,30 @@
+# Lesson 20 — CTEs, Subqueries, and SQL Readability
+
+## Key Concepts
+CTEs and subqueries can often solve the same problem. The better choice depends on readability, reuse, and the complexity of the transformation.
+
+## CTEs
+Use a CTE when:
+- Breaking a complex problem into logical steps.
+- Reusing an intermediate result.
+- Making interview code easier to explain and debug.
+
+## Subqueries
+Use a subquery when:
+- The transformation is short and used once.
+- Keeping the logic inline remains easy to understand.
+
+## Example
+```sql
+WITH customer_revenue AS (
+    SELECT customer_id, SUM(revenue) AS total_revenue
+    FROM orders
+    GROUP BY customer_id
+)
+SELECT customer_id, total_revenue
+FROM customer_revenue
+WHERE total_revenue > 1000;
+```
+
+## Interview Takeaway
+Readable SQL is a technical skill. In an interview, structure the query so another analyst can quickly understand the grain, transformations, and final business logic.
