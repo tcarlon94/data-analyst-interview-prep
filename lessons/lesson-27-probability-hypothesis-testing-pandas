@@ -1,0 +1,37 @@
+# Lesson 27 — Probability Foundations, Hypothesis Testing, and Pandas
+
+## Probability Foundations
+Probability measures uncertainty on a scale from 0 to 1.
+
+Important concepts:
+- Independent events
+- Mutually exclusive events
+- Conditional probability
+- Complement rule
+- Expected value
+
+## Hypothesis Testing
+Typical workflow:
+1. State the null and alternative hypotheses.
+2. Select an appropriate test.
+3. Choose a significance threshold.
+4. Calculate the test statistic and p-value.
+5. Reject or fail to reject the null.
+6. Interpret the result in business terms.
+
+## Pandas Interview Skills
+```python
+import pandas as pd
+
+# Filter rows
+active = df[df['status'] == 'active']
+
+# Aggregate
+summary = df.groupby('segment', as_index=False)['revenue'].sum()
+
+# Sort
+summary = summary.sort_values('revenue', ascending=False)
+```
+
+## Interview Takeaway
+For Python questions, explain the intended grain and transformation before coding. For statistics questions, state the assumptions and translate the statistical conclusion into a business conclusion.
