@@ -1,0 +1,32 @@
+# Lesson 33 — Rapid-Fire Naomi Mock: Stats, Probability, and Pandas Debugging
+
+## Rapid-Fire Goal
+Answer core technical concepts clearly and concisely without over-explaining.
+
+## Statistics
+Be able to explain in 30–60 seconds:
+- P-value
+- Confidence interval
+- Statistical power
+- Type I / Type II errors
+- Standard error
+- A/B test interpretation
+
+## Probability
+Before calculating:
+1. Define the events.
+2. Determine whether they are independent or conditional.
+3. Identify the correct denominator.
+4. Sanity-check whether the result is between 0 and 1.
+
+## Pandas Debugging
+Common checks:
+- Is the column type correct?
+- Are nulls affecting the result?
+- Did a merge duplicate rows?
+- Is the aggregation at the intended grain?
+- Is the filter applied before or after aggregation?
+- Is the result sorted as intended?
+
+## Interview Takeaway
+For debugging questions, do not guess at syntax changes. State what the current code is doing, identify why that differs from the intended result, then make the smallest correct fix.
