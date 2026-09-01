@@ -1,0 +1,26 @@
+# Lesson 28 — Expected Value, Type I/II Errors, and Conditional Probability
+
+## Expected Value
+Expected value is the probability-weighted average outcome across possible results.
+
+```text
+EV = Σ [P(outcome) × value(outcome)]
+```
+
+It is useful for comparing decisions under uncertainty, such as expected revenue, expected loss, or expected experiment impact.
+
+## Type I and Type II Errors
+- **Type I error:** Rejecting a true null hypothesis. A false positive.
+- **Type II error:** Failing to reject a false null hypothesis. A false negative.
+
+Statistical power is the probability of detecting a real effect when one exists.
+
+## Conditional Probability
+```text
+P(A | B) = P(A and B) / P(B)
+```
+
+The denominator is the population for which condition B is already known to be true.
+
+## Interview Takeaway
+Translate probability questions into populations and outcomes before calculating. For hypothesis testing, explain the real business consequence of false positives and false negatives rather than only defining the terms.
