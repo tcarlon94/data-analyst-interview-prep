@@ -1,0 +1,27 @@
+# Lesson 22 — Cohort Analysis and Retention
+
+## Key Concepts
+Cohort analysis groups users by a shared starting point and tracks behavior over time.
+
+Common cohort definitions:
+- Signup month
+- First purchase month
+- Activation month
+- Acquisition channel
+
+## Retention Framework
+1. Define the cohort event.
+2. Define what counts as retained activity.
+3. Establish the time interval.
+4. Calculate the original cohort size.
+5. Measure the percentage active in later periods.
+6. Compare cohorts and investigate differences.
+
+## Common Pitfalls
+- Mixing calendar activity with cohort-relative activity.
+- Changing the denominator over time.
+- Counting duplicate user activity.
+- Comparing incomplete cohorts with mature cohorts.
+
+## Interview Takeaway
+A retention decline is the start of the investigation. Segment by cohort, acquisition source, customer type, product behavior, and other relevant dimensions to identify where the decline originates.
