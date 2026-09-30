@@ -1,0 +1,53 @@
+# Lesson 38 — Root-Cause Analysis: From KPI Drop to Recommendation
+
+## Core Framework
+When a KPI declines:
+
+1. Validate the metric and data pipeline.
+2. Decompose the KPI into its drivers.
+3. Segment the affected population.
+4. Identify the strongest driver.
+5. Form a hypothesis.
+6. Test causality or incrementality where possible.
+7. Quantify business impact.
+8. Recommend action.
+
+## Metric Tree Example
+Revenue can be decomposed into:
+
+```text
+Revenue = Customers × Revenue per Customer
+```
+
+Revenue per customer can then be decomposed into drivers such as:
+- Transaction frequency
+- Average transaction value
+- Product mix
+- Pricing and discounts
+
+## Discount Case
+A decline in revenue coincided with a large increase in discounted orders.
+
+The correct conclusion is not immediately:
+
+> Discounts caused the revenue decline.
+
+Instead:
+
+> The evidence suggests the increase in discounts is associated with the decline and should be tested as a potential driver.
+
+## Incrementality
+The key question is whether a discount caused purchases that would not otherwise have happened.
+
+The strongest design is a randomized experiment comparing treatment and control on:
+- Conversion
+- Transactions per customer
+- Revenue per customer
+- Contribution margin per customer
+
+Statistical significance alone is not enough. A treatment can increase conversion while reducing revenue or margin per customer.
+
+## Interview Takeaway
+Use the sequence:
+
+**Observation → hypothesis → validation → causal test → business impact → recommendation.**
