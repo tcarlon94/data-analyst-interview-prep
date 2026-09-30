@@ -1,0 +1,75 @@
+# Lesson 40 — LAG(), Growth Rates, and Trend Diagnosis
+
+## LAG()
+`LAG()` retrieves a value from a previous row without requiring a self-join.
+
+```sql
+SELECT
+    product,
+    month,
+    revenue,
+    LAG(revenue) OVER (
+        PARTITION BY product
+        ORDER BY month
+    ) AS previous_month_revenue
+FROM monthly_revenue;
+```
+
+`PARTITION BY product` restarts the calculation for each product.
+
+`ORDER BY month` determines which row is considered previous.
+
+## Month-over-Month Growth
+A clean pattern is to calculate the lagged value in a CTE, then calculate growth outside it:
+
+```sql
+WITH mom_revenue AS (
+    SELECT
+        product,
+        month,
+        revenue,
+        LAG(revenue) OVER (
+            PARTITION BY product
+            ORDER BY month
+        ) AS previous_month_revenue
+    FROM monthly_revenue
+)
+SELECT
+    product,
+    month,
+    revenue,
+    previous_month_revenue,
+    1.0 * (revenue - previous_month_revenue)
+        / NULLIF(previous_month_revenue, 0) AS growth_pct
+FROM mom_revenue;
+```
+
+## Window ORDER BY vs Query ORDER BY
+These serve different purposes:
+
+- Window `ORDER BY` controls the calculation.
+- Final query `ORDER BY` controls displayed result order.
+
+## Diagnosing a Revenue Decline
+If product revenue falls, start with a simple driver equation:
+
+```text
+Revenue = Orders × Average Order Value
+```
+
+Determine whether the decline came from:
+- Fewer orders
+- Lower AOV
+- Both
+
+Then decompose the affected driver further using metrics such as:
+- Conversion
+- Traffic or customer volume
+- Product mix
+- Discounts
+- Customer segment
+
+Also compare against prior periods to check seasonality, promotions, or an unusually strong comparison month.
+
+## Interview Takeaway
+Use `LAG()` for period-over-period comparisons, but pair the calculation with a structured business diagnosis rather than stopping at the percentage change.
