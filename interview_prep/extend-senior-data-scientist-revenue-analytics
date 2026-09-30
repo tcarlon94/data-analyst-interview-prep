@@ -1,0 +1,291 @@
+# Extend — Senior Data Scientist, Revenue Analytics Interview Prep
+
+## Interview Structure
+
+Virtual onsite preparation covered four interviews:
+
+1. **SQL / Technical Assessment** — aggregation, joins, grain, CTEs, window functions, ranking, conditional aggregation, and validation.
+2. **Python, Statistics & Probability** — Pandas fluency, probability, hypothesis testing, experiment interpretation, and statistical reasoning.
+3. **Teamwork** — collaboration, analytical project leadership, ambiguity, and stakeholder communication.
+4. **Culture** — motivation, ownership, communication style, and working cross-functionally.
+
+The goal was not only to produce technically correct answers, but to explain assumptions, business implications, and validation steps clearly.
+
+---
+
+## SQL Framework
+
+Before writing SQL:
+
+1. Define the requested output grain.
+2. Identify source-table grain.
+3. Identify join keys and possible row multiplication.
+4. Decide which filters belong before aggregation.
+5. Choose `GROUP BY` vs. window functions based on whether rows should collapse.
+6. Handle nulls and ties intentionally.
+7. Validate that the output answers the business question.
+
+High-value patterns practiced:
+- `GROUP BY`, `WHERE`, and `HAVING`
+- CTEs and subqueries
+- Inner and left joins
+- Conditional aggregation
+- `ROW_NUMBER()`, `RANK()`, and `DENSE_RANK()`
+- `LAG()` and `LEAD()`
+- Top-N per group
+- Date filtering
+- Join duplication and grain mismatches
+
+---
+
+## Python / Pandas Patterns
+
+### Filtering
+```python
+df[df["x"] >= 100]
+
+df[(df["x"] >= 100) & (df["y"] > 0.25)]
+```
+
+### Grouping and Aggregation
+```python
+summary = df.groupby("id").agg(
+    count=("transaction_id", "count"),
+    avg=("amount", "mean"),
+    total=("amount", "sum"),
+    rate=("binary_flag", "mean")
+).reset_index()
+```
+
+### Merging
+```python
+df1.merge(df2, on="merchant_id", how="left")
+
+df1.merge(
+    df2,
+    left_on="merchant_id",
+    right_on="id",
+    how="left"
+)
+```
+
+### Missing Values
+```python
+df["x"].isnull().sum()
+df[df["x"].isnull()]
+df["x"] = df["x"].fillna(0)
+```
+
+### Dates
+```python
+df["date"] = pd.to_datetime(df["date"])
+df["date"].dt.year
+df["date"].dt.month
+```
+
+### Duplicates
+```python
+df[df["id"].duplicated(keep=False)]
+df.drop_duplicates(subset="id", keep="first")
+```
+
+### Conditional Logic
+```python
+df["flag"] = np.where(df["amount"] > 0, 1, 0)
+```
+
+---
+
+## Statistical Test Selection
+
+A practical interview framework:
+
+| Business Question | Test |
+|---|---|
+| Compare two independent rates | Two-proportion z-test |
+| Compare two independent means | Independent two-sample t-test |
+| Same subjects measured twice | Paired t-test |
+| Compare 3+ independent means | ANOVA |
+| Categorical variable vs. categorical variable | Chi-square |
+| Sample mean vs. benchmark | One-sample t-test |
+
+The sequence is:
+
+**Outcome type → number of groups → group relationship → statistical test → interpretation → business decision**
+
+---
+
+## Core Statistics
+
+### Type I and Type II Errors
+
+- **Type I error:** false positive; rejecting a true null hypothesis.
+- **Type II error:** false negative; failing to reject a false null hypothesis.
+- **Power:** `1 - beta`.
+
+### Standard Error
+
+```text
+SE = sigma / sqrt(n)
+```
+
+As sample size increases:
+
+**n ↑ → SE ↓ → confidence interval narrows → power ↑ → Type II error ↓**
+
+### Central Limit Theorem
+
+With a sufficiently large independent sample, the sampling distribution of the sample mean approaches normality even when the underlying population is skewed.
+
+The raw data itself does **not** become normally distributed.
+
+### Confidence Intervals
+
+A confidence interval provides a plausible range for the true effect.
+
+If an effect-size confidence interval includes zero, zero remains a plausible value for the true effect.
+
+---
+
+## Probability Patterns
+
+### At Least One Event
+
+Use the complement:
+
+```text
+P(at least one) = 1 - P(none)
+                = 1 - (1-p)^n
+```
+
+### Expected Value
+
+```text
+EV = Σ probability × outcome
+```
+
+### Binomial Probability
+
+Use a binomial model when there is:
+- A fixed number of trials
+- A binary outcome
+- Independent trials
+- A constant probability of success
+
+### Conditional Probability
+
+Base-rate problems are easier to reason through by constructing a population tree or expected counts rather than relying only on memorized formulas.
+
+---
+
+## Experimentation
+
+Statistical significance is not the same as business significance.
+
+A statistically significant conversion lift can still be a poor business decision if revenue per customer, margin, retention, or another key business metric deteriorates.
+
+For an experiment:
+
+1. Define the primary metric.
+2. Define guardrail metrics.
+3. Randomize treatment and control.
+4. Ensure sufficient sample size.
+5. Measure the effect and uncertainty.
+6. Evaluate statistical significance.
+7. Evaluate practical/business significance.
+8. Make a recommendation based on the full tradeoff.
+
+Avoid causal language for observational or simple before/after analyses when confounding variables may explain the result.
+
+---
+
+## Model Selection
+
+### Binary Target
+Start with classification:
+- Logistic regression as an interpretable baseline
+- Random forest or gradient boosting for nonlinear relationships and interactions
+
+### Continuous Target
+Start with regression:
+- Linear regression as a baseline
+- Random forest or gradient boosting regression for nonlinear relationships
+
+### Time-Dependent Continuous Target
+Use time-series forecasting and preserve chronology during validation.
+
+Do **not** randomly split time-series observations.
+
+### Unlabeled Groups
+Use clustering when the goal is to discover naturally occurring segments.
+
+### Experiment Effect
+Use hypothesis testing or causal inference rather than a predictive model when the goal is to estimate intervention impact.
+
+---
+
+## Overfitting
+
+A classic signal:
+
+**Training performance is strong while test performance is substantially worse.**
+
+Possible responses:
+- Check for data leakage
+- Check train/test distribution shift
+- Simplify the model
+- Apply regularization where appropriate
+- Tune hyperparameters using cross-validation
+- Remove noisy features
+- Collect more representative data
+
+Cross-validation helps diagnose and tune a model; it does not itself eliminate overfitting.
+
+### Ridge vs. Lasso
+
+- **Ridge:** shrinks coefficients toward zero.
+- **Lasso:** can shrink some coefficients exactly to zero.
+
+Neither is primarily an outlier-handling technique.
+
+---
+
+## Imbalanced Classification
+
+Accuracy can be misleading when the target is imbalanced.
+
+Evaluate:
+- Confusion matrix
+- Precision
+- Recall
+- F1 score
+- PR-AUC
+
+**Recall:** Of the actual positives, how many did the model catch?
+
+**Precision:** Of the predicted positives, how many were actually positive?
+
+---
+
+## Model Interpretation and Causality
+
+Feature importance measures predictive importance, not causal importance or necessarily the direction of a relationship.
+
+Tools such as SHAP and partial dependence plots can help explain model behavior, but they do not establish causality.
+
+When the business question is causal, prefer randomized experiments when possible. Otherwise, explicitly consider confounding and appropriate causal or quasi-experimental methods.
+
+---
+
+## Interview Communication
+
+For technical questions:
+
+1. Restate the problem.
+2. Clarify assumptions.
+3. Explain the approach before coding.
+4. Work through the solution.
+5. Validate edge cases.
+6. Translate the result into business meaning.
+
+The strongest answer is not simply technically correct. It demonstrates that the analysis would support a reliable business decision.
