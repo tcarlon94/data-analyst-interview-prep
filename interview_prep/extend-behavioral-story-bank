@@ -1,0 +1,143 @@
+# Extend Interview — Behavioral Story Bank
+
+## Botify: SEO Revenue Recovery
+
+### Situation
+A retail client experienced roughly a 15–20% year-over-year decline in organic search revenue following the COVID-era surge.
+
+### Analysis
+I investigated the funnel and found declines in rankings and crawling. I segmented performance by page type, page age, and crawl depth.
+
+The analysis identified roughly 100 newer product-detail pages that were buried about seven clicks deep and were not being crawled effectively.
+
+### Recommendation
+I recommended improving internal linking so the affected pages were reachable within roughly two to three clicks.
+
+### Interview Themes
+- Root-cause analysis
+- Working with ambiguous performance declines
+- Turning technical analysis into an actionable recommendation
+- Communicating findings to stakeholders
+
+---
+
+## Botify: SpeedWorkers Executive Recommendation
+
+### Situation
+During a QBR with the CMO of a hardware retailer, site rendering and crawl efficiency were limiting organic-search performance.
+
+### Action
+I explained crawl budget and rendering constraints in business terms and introduced SpeedWorkers as a potential solution.
+
+### Result
+The client purchased the product. Rendering performance improved substantially, and the client later experienced approximately 10% year-over-year organic revenue growth.
+
+### Interview Themes
+- Executive communication
+- Translating technical concepts
+- Influencing a business decision
+- Connecting analysis to business impact
+
+---
+
+## Proxify: Marketing Channel Efficiency
+
+### Situation
+New-client revenue was down roughly 15% during a quarter in which the team was investing substantial sales effort in Microsoft-suite leads.
+
+### Analysis
+Microsoft-suite leads represented roughly 30% of leads and consumed about 60 hours of sales-rep time, but converted at approximately 0.5%, compared with roughly 10% for other leads.
+
+### Action
+I surfaced the discrepancy to my manager and discussed it with marketing.
+
+### Result
+Marketing clarified that the channel was an experiment, and the teams aligned on using different channels for future testing.
+
+### Interview Themes
+- Challenging an inefficient process with data
+- Cross-functional communication
+- Resource allocation
+- Constructive disagreement
+
+---
+
+## Zillow Home Price Model: Data Quality
+
+### Situation
+While building a home-price prediction model, New Mexico appeared unexpectedly expensive.
+
+### Investigation
+The pipeline had forward-filled missing monthly values. An expensive town's old value had been carried forward for years, distorting the state-level data.
+
+### Fix
+I limited forward filling to six months and required sufficient sales volume before relying on the data.
+
+### Result
+The final Ridge model achieved approximately:
+- Test R²: 0.88
+- RMSE: $29K
+
+### Interview Themes
+- Data-quality investigation
+- Validation before modeling
+- Debugging unexpected results
+- Modeling judgment
+
+---
+
+## NLP News Categorization: Data Cleaning and Modeling
+
+### Situation
+I worked with roughly 250,000 news articles spanning more than 36 original categories.
+
+### Approach
+I consolidated the target into eight broader categories and built a TF-IDF and LightGBM classification pipeline.
+
+During validation, I identified roughly 20,000 duplicate or archived stories that redirected to home pages and removed them.
+
+### Result
+The model achieved approximately:
+- Mean accuracy: 0.787
+- Macro-F1: 0.738
+
+### Interview Themes
+- End-to-end analytical work
+- NLP and classification
+- Data cleaning
+- Model evaluation beyond accuracy
+
+---
+
+## MLB Analytics Platform: Grain and Data Modeling
+
+### Situation
+I built an MLB analytics pipeline using API data, Python, Snowflake, SQL, and Tableau.
+
+### Challenge
+An early version created aggregation errors because tables at different grains were being combined incorrectly.
+
+### Action
+I redesigned the warehouse around a clearer star schema and explicitly separated team-game, player-game batting, and player-game pitching facts.
+
+### Interview Themes
+- End-to-end project ownership
+- ETL and data modeling
+- SQL grain
+- Debugging analytics systems
+- Designing data for BI consumption
+
+---
+
+## Behavioral Answer Framework
+
+Use STAR, but keep the emphasis on analytical ownership:
+
+**Situation → business problem → analytical approach → decision/action → measurable result → lesson**
+
+For senior analytics interviews, explicitly explain:
+- What you personally owned
+- How you validated the analysis
+- How you handled ambiguity
+- How you communicated with stakeholders
+- What business decision changed because of the work
